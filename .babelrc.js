@@ -6,7 +6,6 @@ module.exports = {
     'transform-class-properties',
     'transform-object-rest-spread',
     'react-hot-loader/babel',
-    'universal-import',
     isTest ? 'dynamic-import-node' : null
   ].filter(Boolean)
 };

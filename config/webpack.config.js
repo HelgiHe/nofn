@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -22,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [ExtractCssChunks.loader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpg|svg)$/,
@@ -40,12 +41,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new ExtractCssChunks({ hot: true }),
     new HtmlWebpackPlugin({
       template: './public/index.html'
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
     })
   ]
 };

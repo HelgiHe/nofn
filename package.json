@@ -1,7 +1,7 @@
 {
   "name": "nofn",
   "version": "1.0.0",
-  "description": "web app for icelandic names",
+  "description": "Web app for icelandic names",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config=config/webpack.config.js --open --hot",
@@ -22,7 +22,6 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-universal-import": "^3.0.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
@@ -35,6 +34,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^3.1.0",
+    "extract-css-chunks-webpack-plugin": "^3.0.11",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
@@ -60,12 +60,12 @@
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.3.5",
+    "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-snapshot": "^1.3.0",
     "react-transition-group": "^2.4.0",
-    "react-universal-component": "^3.0.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
   },
