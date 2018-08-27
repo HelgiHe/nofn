@@ -4,8 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
+  mode: 'development',
   output: {
     filename: 'bundle.js'
+  },
+  devServer: {
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -19,6 +23,19 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              mimetype: 'image/png',
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
