@@ -3,6 +3,8 @@ import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home';
 import Login from './views/Login';
+import Input from './components/input';
+import NameList from './components/nameList';
 import './App.scss';
 
 class App extends Component {
@@ -10,10 +12,13 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <Switch>
+          Hi there!
+          <Input />
+          <NameList />
+          {/* <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" exact component={Login} />
-          </Switch>
+          </Switch> */}
         </div>
       </Router>
     );

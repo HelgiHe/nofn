@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1534935246966" clover="3.2.0">
-  <project timestamp="1534935246966" name="All files">
-    <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="6" coveredelements="2" complexity="0" loc="5" ncloc="5" packages="1" files="2" classes="2">
-      <file name="App.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/App.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="1" type="stmt"/>
-      </file>
-      <file name="index.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/index.js">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-      </file>
+<coverage generated="1535552039347" clover="3.2.0">
+  <project timestamp="1535552039347" name="All files">
+    <metrics statements="11" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1" elements="16" coveredelements="2" complexity="0" loc="11" ncloc="11" packages="3" files="8" classes="8">
+      <package name="src">
+        <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="App.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/App.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="12" count="2" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/index.js">
+          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+        </file>
+        <file name="setupTests.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/setupTests.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="input.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/components/input.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="nameList.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/components/nameList.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.views">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="Home.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/views/Home.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="Login.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/views/Login.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="Signup.js" path="/Users/HelgiH/Documents/workspace/personal/nofn/src/views/Signup.js">
+          <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+      </package>
     </metrics>
   </project>
 </coverage>
