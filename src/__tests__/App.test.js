@@ -4,16 +4,18 @@ import { shallow } from 'enzyme';
 import setupTests from '../setupTests';
 import App from '../App';
 import Input from '../components/input';
-import nameList from '../components/nameList';
+import NameList from '../components/nameList';
+
+let wrapped;
+
+beforeEach(() => {
+  wrapped = shallow(<App />);
+});
 
 it('shows an input', () => {
-  const wrapped = shallow(<App />);
-
   expect(wrapped.find(Input)).toHaveLength(1);
 });
 
 it('shows a list of names', () => {
-  const wrapped = shallow(<App />);
-
-  expect(wrapped.find(nameList)).toHaveLength(1);
+  expect(wrapped.find(NameList)).toHaveLength(1);
 });
