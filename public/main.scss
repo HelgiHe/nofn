@@ -1,5 +1,9 @@
 @import '../styles/reset';
-@import '../styles/colors';
+@import '../styles/constants';
+
+body {
+  font-family: $main-fonts;
+}
 
 .app {
   background-color: $primary-color;
