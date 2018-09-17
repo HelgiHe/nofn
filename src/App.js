@@ -5,6 +5,7 @@ import Home from './views/Home';
 import Login from './views/Login';
 import Input from './components/input';
 import NameList from './components/nameList';
+import ScrollToTop from './components/ScrollToTop';
 import { firebaseApiKey } from '../config/keys';
 import firebase from 'firebase/app';
 import './App.scss';
@@ -26,13 +27,14 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <ScrollToTop />
           Nofn
           <Input />
           <NameList />
-          {/* <Switch>
+          <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" exact component={Login} />
-          </Switch> */}
+          </Switch>
         </div>
       </Router>
     );
