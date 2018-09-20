@@ -1,10 +1,6 @@
 @import '../styles/reset';
-@import '../styles/colors';
-
-// .app {
-//   background-color: $primary-color;
-// }
+@import '../styles/constants';
 
 .app {
-  color: yellow;
+  color: $primary-color;
 }

@@ -3,6 +3,8 @@ import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home';
 import Login from './views/Login';
+import About from './views/About';
+import NoMatch from './views/NoMatch';
 import Input from './components/input';
 import NameList from './components/nameList';
 import ScrollToTop from './components/ScrollToTop';
@@ -34,6 +36,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" exact component={Login} />
+            <Route path="/about" exact component={About} />
+            <Route component={NoMatch} />
           </Switch>
         </div>
       </Router>

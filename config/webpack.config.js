@@ -4,7 +4,7 @@ const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['./src/index.js', './public/main.scss'],
   mode: 'development',
   output: {
     filename: 'bundle.js'
