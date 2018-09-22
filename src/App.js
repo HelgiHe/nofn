@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home';
 import Login from './views/Login';
 import About from './views/About';
+import SignUp from './views/Signup';
 import NoMatch from './views/NoMatch';
 import Input from './components/input';
 import NameList from './components/nameList';
+
 import ScrollToTop from './components/ScrollToTop';
 import { firebaseApiKey } from '../config/keys';
 import firebase from 'firebase/app';
@@ -37,6 +39,7 @@ class App extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/login" exact component={Login} />
             <Route path="/about" exact component={About} />
+            <Route path="/signup" component={SignUp} />
             <Route component={NoMatch} />
           </Switch>
         </div>

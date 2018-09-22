@@ -1,16 +1,18 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import './NoMatch.scss';
+
 const NoMatch = () => (
   <div className="NoMatch">
     <section className="section thick">
       <div className="container">
         <h1>404 - Page Not Found</h1>
         <p>
-          We can't find the page you are looking for!
+          Við fundum ekki síðuna sem þú ert að leita af 😕
           <br />
-          Head back to
-          <a href="https://still-shelf-23280.herokuapp.com">the homepage</a>
+          Líklega best að fara aftur á
+          <a href="https://still-shelf-23280.herokuapp.com"> Heimasíðuna</a>
         </p>
       </div>
     </section>
