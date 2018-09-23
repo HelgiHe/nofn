@@ -8,6 +8,7 @@ import SignUp from './views/Signup';
 import NoMatch from './views/NoMatch';
 import Input from './components/input';
 import NameList from './components/nameList';
+import Nav from './components/nav';
 
 import ScrollToTop from './components/ScrollToTop';
 import { firebaseApiKey } from '../config/keys';
@@ -32,6 +33,7 @@ class App extends Component {
       <Router>
         <div className="app">
           <ScrollToTop />
+          <Nav />
           Nofn
           <Input />
           <NameList />

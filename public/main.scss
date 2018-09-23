@@ -3,10 +3,18 @@
 
 body {
   font-family: $main-fonts;
+  color: $font-color;
 }
 
-.app {
-  background-color: $yellow;
+/*remove default styling for a tags*/
+a {
+  color: $font-color;
+}
+a:visited {
+  color: $font-color;
+}
+a:active {
+  color: $font-color;
 }
 
 #modal {
@@ -20,14 +28,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  div {
-    background-color: white;
-    max-width: 500px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-  }
 
   &:empty {
     display: none;

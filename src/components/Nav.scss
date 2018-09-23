@@ -1,0 +1,53 @@
+@import '../../styles/constants';
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background-color: $yellow;
+  border-top-left-radius: 99%;
+
+  &.menu--open {
+    position: static;
+    height: 0px;
+    width: 0px;
+  }
+
+  .menu-bars {
+    position: absolute;
+    bottom: 22px;
+    right: 20px;
+  }
+
+  .menu-bar {
+    width: 35px;
+    height: 5px;
+    background-color: $ghost-white;
+    margin-top: 5px;
+    transition: 250ms;
+  }
+}
+
+.bar1 {
+  &.bar--close {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+    width: 30px;
+  }
+}
+
+.bar2 {
+  &.bar--close {
+    opacity: 0;
+  }
+}
+
+.bar3 {
+  &.bar--close {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    width: 30px;
+  }
+}
