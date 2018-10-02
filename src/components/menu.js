@@ -21,6 +21,13 @@ class Menu extends React.Component {
         <Link
           className={`menu__link
       ${expanded ? 'expanded' : ''} `}
+          to="/names/"
+        >
+          Nöfn
+        </Link>
+        <Link
+          className={`menu__link
+      ${expanded ? 'expanded' : ''} `}
           to="/login/"
         >
           Innskráning

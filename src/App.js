@@ -7,6 +7,7 @@ import About from './views/About';
 import SignUp from './views/Signup';
 import NoMatch from './views/NoMatch';
 import Input from './components/input';
+import Names from './views/Names';
 import NameList from './components/nameList';
 import Nav from './components/nav';
 
@@ -39,6 +40,7 @@ class App extends Component {
           <NameList />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/names" exact component={Names} />
             <Route path="/login" exact component={Login} />
             <Route path="/about" exact component={About} />
             <Route path="/signup" component={SignUp} />

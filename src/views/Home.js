@@ -5,7 +5,10 @@ export default () => {
     <div>
       <h1>Velkomin</h1>
       <section>
-        <p>Á þessum vef er hægt að bla bla bla</p>
+        <p>
+          Nöfn.is hefur það markmið að bjóða tilvonandi foreldrum, sem og þeim
+          sem hafa áhuga bla bla bla
+        </p>
       </section>
     </div>
   );
