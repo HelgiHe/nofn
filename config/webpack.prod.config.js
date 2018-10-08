@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -7,7 +8,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = env => {
   return {
-    entry: ['./src/index.js', './public/main.scss'],
+    entry: ['./src/index.js'],
     mode: 'production',
     output: {
       filename: 'bundle.js'
