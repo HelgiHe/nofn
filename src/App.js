@@ -7,12 +7,15 @@ import About from './views/About';
 import SignUp from './views/Signup';
 import NoMatch from './views/NoMatch';
 import Names from './views/Names';
-import Nav from './components/nav';
+import Nav from './components/Nav';
 
-import ScrollToTop from './components/ScrollToTop';
-import { firebaseApiKey } from '../config/keys';
+import ScrollToTop from './components/scrollToTop';
 import firebase from 'firebase/app';
 import './App.scss';
+let firebaseApiKey = '';
+if (!process.env.NODE_ENV === 'production') {
+  firebaseApiKey = import('../config/keys').firebaseApiKey;
+}
 
 class App extends Component {
   componentDidMount = () => {
