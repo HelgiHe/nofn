@@ -13,18 +13,16 @@ import ScrollToTop from './components/scrollToTop';
 import firebase from 'firebase/app';
 import './App.scss';
 let firebaseApiKey = '';
-if (!process.env.NODE_ENV === 'production') {
-  firebaseApiKey = import('../config/keys').firebaseApiKey;
-}
+// if (!process.env.NODE_ENV === 'production') {
+//   firebaseApiKey = import('../config/keys').firebaseApiKey;
+// }
 
 class App extends Component {
   componentDidMount = () => {
     // Initialize Firebase
+    console.log(process);
     const config = {
-      apiKey:
-        process.env.NODE_ENV === 'production'
-          ? process.env.firebaseApiKey
-          : firebaseApiKey,
+      apiKey: '',
       authDomain: 'nofn-4cfa4.firebaseapp.com',
       databaseURL: 'https://nofn-4cfa4.firebaseio.com',
       projectId: 'nofn-4cfa4',
