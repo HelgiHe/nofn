@@ -18,7 +18,10 @@ class App extends Component {
   componentDidMount = () => {
     // Initialize Firebase
     const config = {
-      apiKey: firebaseApiKey,
+      apiKey:
+        process.env.NODE_ENV === 'production'
+          ? process.env.firebaseApiKey
+          : firebaseApiKey,
       authDomain: 'nofn-4cfa4.firebaseapp.com',
       databaseURL: 'https://nofn-4cfa4.firebaseio.com',
       projectId: 'nofn-4cfa4',
