@@ -4,5 +4,5 @@ const express = require('express');
 const server = express();
 
 server.listen(8080, () => {
-  console.log('listengin');
+  console.log('Dev listening on 8080');
 });
