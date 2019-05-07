@@ -12,11 +12,10 @@ module.exports = {
     '@babel/preset-react'
   ],
   plugins: [
-    'syntax-dynamic-import',
-    'transform-class-properties',
-    'transform-object-rest-spread',
-    'react-hot-loader/babel',
-    '@babel/plugin-syntax-dynamic-import'
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-syntax-dynamic-import',
+    'react-hot-loader/babel'
     // isTest ? 'dynamic-import-node' : null
   ].filter(Boolean)
 };

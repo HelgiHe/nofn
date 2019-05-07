@@ -4,7 +4,6 @@ const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
-  console.log('env', env);
   return {
     entry: ['./src/index.js'],
     mode: 'development',
