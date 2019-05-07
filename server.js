@@ -7,9 +7,9 @@ const expressStaticGzip = require('express-static-gzip');
 app.use(expressStaticGzip(path.join(__dirname, 'dist')));
 // app.use(express.static(__dirname + '/dist'));
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 const port = process.env.PORT || 8080;
 app.listen(port);
-console.log(`Server listengin on port ${port}`);
+console.log(`Server listening on port ${port}`);

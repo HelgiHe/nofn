@@ -1,7 +1,7 @@
 {
   "name": "nofn",
   "version": "1.0.0",
-  "description": "Web app for icelandic names",
+  "description": "Web app for Icelandic names",
   "main": "index.js",
   "scripts": {
     "dev": "node ./src/server/main.js",
@@ -21,7 +21,6 @@
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.5",
     "babel-minify": "^0.4.3",
-    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -61,7 +60,7 @@
     "eslint-plugin-import": "^2.17.2",
     "express": "^4.16.4",
     "express-static-gzip": "^1.1.3",
-    "firebase": "^5.4.0",
+    "firebase": "^5.11.1",
     "moxios": "^0.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

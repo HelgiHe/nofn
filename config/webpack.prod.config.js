@@ -3,15 +3,16 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = env => {
   return {
     entry: ['./src/index.js'],
     mode: 'production',
     output: {
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     optimization: {
       runtimeChunk: false,
@@ -23,7 +24,8 @@ module.exports = env => {
             chunks: 'all'
           }
         }
-      }
+      },
+      minimizer: [new UglifyJsPlugin()]
     },
     module: {
       rules: [
@@ -75,7 +77,6 @@ module.exports = env => {
         filename: '[name].css',
         chunkFilename: '[id].css'
       }),
-      new MinifyPlugin(),
       new CompressionPlugin({
         algorithm: 'gzip'
       })

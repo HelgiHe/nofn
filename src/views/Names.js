@@ -1,17 +1,19 @@
 import React from 'react';
-import firebase from 'firebase';
+import { FirebaseContext } from '../context';
 
-export default class Names extends React.Component {
+class Names extends React.Component {
   constructor(props) {
     super(props);
     this.state = { alphabet: 'a', names: [] };
   }
 
   componentDidMount() {
+    console.log(this.props);
     this.fetchData();
   }
   fetchData() {
-    const db = firebase.firestore();
+    const { db } = this.props.firebase;
+    // const db = firebase.firestore();
     const settings = {
       timestampsInSnapshots: true
     };
@@ -61,4 +63,12 @@ export default class Names extends React.Component {
       </div>
     );
   }
+}
+
+export default function NamesWithContext(props) {
+  return (
+    <FirebaseContext.Consumer>
+      {context => <Names {...props} firebase={context} />}
+    </FirebaseContext.Consumer>
+  );
 }

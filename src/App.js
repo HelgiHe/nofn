@@ -10,26 +10,12 @@ import Names from './views/Names';
 import Nav from './components/Nav';
 
 import ScrollToTop from './components/scrollToTop';
-import firebase from 'firebase/app';
 import './App.scss';
-let firebaseApiKey = '';
-// if (!process.env.NODE_ENV === 'production') {
-//   firebaseApiKey = import('../config/keys').firebaseApiKey;
-// }
 
 class App extends Component {
   componentDidMount = () => {
     // Initialize Firebase
     console.log(process);
-    const config = {
-      apiKey: '',
-      authDomain: 'nofn-4cfa4.firebaseapp.com',
-      databaseURL: 'https://nofn-4cfa4.firebaseio.com',
-      projectId: 'nofn-4cfa4',
-      storageBucket: 'nofn-4cfa4.appspot.com',
-      messagingSenderId: '375606112602'
-    };
-    firebase.initializeApp(config);
   };
   render() {
     return (
