@@ -1,1 +1,1 @@
-export * from './names';
+export * from './name_action';

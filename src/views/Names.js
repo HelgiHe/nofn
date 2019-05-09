@@ -1,68 +1,16 @@
 import React from 'react';
-import { FirebaseContext } from '../context';
+import { connect } from 'react-redux';
+import { getNames, getNamesByLetter } from '../actions';
 
 class Names extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { alphabet: 'a', names: [] };
-  }
-
   componentDidMount() {
-    console.log(this.props);
-    // this.fetchData();
-    // this.getDocument();
-  }
-
-  getDocument() {
-    const { db } = this.props.firebase;
-
-    db.collection('femaleNames')
-      .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, ' => ', doc.data());
-        });
-      })
-      .catch(function(error) {
-        console.log('Error getting documents: ', error);
-      });
-  }
-
-  fetchData() {
-    const { db } = this.props.firebase;
-
-    const bla = db.collection('femaleNames');
-    bla.get();
-
-    const names = db.collection('femaleNames').doc('A');
-    names
-      .get()
-      .then(doc => {
-        if (doc.exists) {
-          const newNames = doc.data();
-          console.log(newNames);
-          this.setState(() => ({ names: newNames.names }));
-        } else {
-          // doc.data() will be undefined in this case
-          console.log('no names begin with currentLetter!');
-        }
-      })
-      .catch(error => {
-        console.log('Error getting document:', error);
-      });
-  }
-
-  addToNameList(names) {
-    this.setState(() => this.setState({ names }));
+    this.props.getNamesByLetter();
   }
 
   renderNames() {
-    const { names } = this.state;
-    if (!names) {
-      return null;
-    }
-    return names.map(name => {
+    const { femaleNames, maleNames } = this.props;
+
+    return femaleNames.map(name => {
       return (
         <div key={name.name}>
           <p>{name.name}</p>
@@ -72,6 +20,10 @@ class Names extends React.Component {
     });
   }
   render() {
+    const { loading } = this.props;
+    if (loading) {
+      return <p>loading</p>;
+    }
     return (
       <div>
         <h4>List of names</h4>
@@ -81,10 +33,13 @@ class Names extends React.Component {
   }
 }
 
-export default function NamesWithContext(props) {
-  return (
-    <FirebaseContext.Consumer>
-      {context => <Names {...props} firebase={context} />}
-    </FirebaseContext.Consumer>
-  );
-}
+const mapStateToProps = ({ names }) => {
+  const { femaleNames, maleNames, loading } = names;
+
+  return { femaleNames, maleNames, loading };
+};
+
+export default connect(
+  mapStateToProps,
+  { getNames, getNamesByLetter }
+)(Names);
