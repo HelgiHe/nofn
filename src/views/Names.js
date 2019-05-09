@@ -9,15 +9,31 @@ class Names extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    this.fetchData();
+    // this.fetchData();
+    // this.getDocument();
   }
+
+  getDocument() {
+    const { db } = this.props.firebase;
+
+    db.collection('femaleNames')
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, ' => ', doc.data());
+        });
+      })
+      .catch(function(error) {
+        console.log('Error getting documents: ', error);
+      });
+  }
+
   fetchData() {
     const { db } = this.props.firebase;
-    // const db = firebase.firestore();
-    const settings = {
-      timestampsInSnapshots: true
-    };
-    db.settings(settings);
+
+    const bla = db.collection('femaleNames');
+    bla.get();
 
     const names = db.collection('femaleNames').doc('A');
     names
@@ -58,7 +74,7 @@ class Names extends React.Component {
   render() {
     return (
       <div>
-        <p>List of names</p>
+        <h4>List of names</h4>
         {this.renderNames()}
       </div>
     );
