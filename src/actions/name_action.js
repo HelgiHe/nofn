@@ -1,33 +1,30 @@
 import { fireStoreRef } from '../../config/firebase';
-import { ADD_FEMALE_LETTER } from './types';
+import {
+  SET_LETTER_POS,
+  FETCH_FEMALE_NAMES,
+  ADD_FEMALE_LETTER,
+  SET_HAS_MORE
+} from './types';
 
-export const getNames = (sex = 'femaleNames') => {
-  return dispatch => {
-    fireStoreRef
-      .collection('femaleNames')
-      .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, ' => ', doc.data());
-        });
-      })
-      .catch(function(error) {
-        console.log('Error getting documents: ', error);
-      });
+export const incrementLetterPos = () => {
+  return {
+    type: SET_LETTER_POS
   };
 };
 
-export const getNamesByLetter = (letter = 'A') => {
+export const setHasMore = bool => {
+  return { type: SET_HAS_MORE, payload: bool };
+};
+
+export const getNamesByLetter = (letter = 'A', sex = 'femaleNames') => {
   return dispatch => {
-    const names = fireStoreRef.collection('femaleNames').doc('A');
+    const names = fireStoreRef.collection('femaleNames').doc(letter);
 
     names
       .get()
       .then(doc => {
         if (doc.exists) {
           const newNames = doc.data();
-          console.log(newNames);
           dispatch({ type: ADD_FEMALE_LETTER, payload: newNames });
         } else {
           // doc.data() will be undefined in this case
