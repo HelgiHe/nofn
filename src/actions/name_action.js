@@ -1,25 +1,10 @@
 import { fireStoreRef } from '../../config/firebase';
-import {
-  SET_LETTER_POS,
-  FETCH_FEMALE_NAMES,
-  ADD_FEMALE_LETTER,
-  SET_HAS_MORE
-} from './types';
-
-export const incrementLetterPos = () => {
-  return {
-    type: SET_LETTER_POS
-  };
-};
-
-export const setHasMore = bool => {
-  return { type: SET_HAS_MORE, payload: bool };
-};
+import { FETCH_FEMALE_NAMES, ADD_FEMALE_LETTER } from './types';
 
 export const getNamesByLetter = (letter = 'A', sex = 'femaleNames') => {
   return dispatch => {
     const names = fireStoreRef.collection('femaleNames').doc(letter);
-
+    dispatch({ type: FETCH_FEMALE_NAMES });
     names
       .get()
       .then(doc => {
