@@ -78,6 +78,7 @@
     "react-transition-group": "^2.9.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
   },
   "eslintIgnore": [

@@ -1,0 +1,17 @@
+.LoginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 10%;
+}
+
+.formTypeContainer {
+  p {
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
