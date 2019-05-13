@@ -1,0 +1,17 @@
+.tabContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+
+  & &__btn1 {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  & &__btn2 {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+}

@@ -1,7 +1,13 @@
 import React from 'react';
 import InfiniteScroll from 'react-bidirectional-infinite-scroll';
 import { connect } from 'react-redux';
-import { getNamesByLetter, incrementLetterPos } from '../actions';
+import LetterSelect from '../components/letterSelect';
+import SegregatedTab from '../components/segregatedTab';
+import {
+  getNamesByLetter,
+  incrementLetterPos,
+  setSelectedSex
+} from '../actions';
 import { capitalize, alphabet } from '../../lib';
 
 import './Names.scss';
@@ -25,13 +31,16 @@ class Names extends React.Component {
     return items;
   }
 
+  setSex(sex) {
+    this.props.setSelectedSex(sex);
+  }
+
   handleVerticalScroll(position, previousPosition) {
     const diffScroll = position - previousPosition;
     const direction = diffScroll > 0 ? 'down' : 'up';
   }
 
   handleScrollDown() {
-    console.log('bottom');
     const { letterPos, loading } = this.props;
     if (!loading) {
       this.props.getNamesByLetter(alphabet[letterPos]);
@@ -39,9 +48,13 @@ class Names extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="nameListContainer">
-        <h4>List of names</h4>
+        <SegregatedTab onClick={this.setSex.bind(this)} />
+        <div className="letterContainer">
+          <LetterSelect />
+        </div>
         <InfiniteScroll
           onScroll={this.handleVerticalScroll.bind(this)}
           onReachBottom={this.handleScrollDown.bind(this)}
@@ -54,12 +67,12 @@ class Names extends React.Component {
 }
 
 const mapStateToProps = ({ names }) => {
-  const { femaleNames, maleNames, loading, letterPos } = names;
+  const { femaleNames, maleNames, loading, letterPos, selectedSex } = names;
 
-  return { femaleNames, maleNames, loading, letterPos };
+  return { femaleNames, maleNames, loading, letterPos, selectedSex };
 };
 
 export default connect(
   mapStateToProps,
-  { getNamesByLetter, incrementLetterPos }
+  { getNamesByLetter, incrementLetterPos, setSelectedSex }
 )(Names);

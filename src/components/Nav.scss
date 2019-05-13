@@ -4,8 +4,8 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  height: 150px;
-  width: 80px;
+  height: 200px;
+  width: 120px;
   background-color: $yellow;
   border-top-left-radius: 99%;
 
@@ -17,16 +17,16 @@
 
   .menu-bars {
     position: absolute;
-    bottom: 35px;
-    right: 15px;
+    bottom: 55px;
+    right: 25px;
   }
 
   .menu-bar {
-    width: 35px;
+    width: 45px;
     height: 5px;
     background-color: $ghost-white;
     margin-top: 7px;
-    transition: 250ms;
+    transition: 200ms ease-in-out;
   }
 }
 
@@ -34,7 +34,7 @@
   &.bar--close {
     -webkit-transform: rotate(-45deg) translate(-7px, 5px);
     transform: rotate(-45deg) translate(-7px, 5px);
-    width: 30px;
+    width: 40px;
   }
 }
 
@@ -48,6 +48,6 @@
   &.bar--close {
     -webkit-transform: rotate(45deg) translate(-11px, -10px);
     transform: rotate(45deg) translate(-11px, -10px);
-    width: 30px;
+    width: 40px;
   }
 }

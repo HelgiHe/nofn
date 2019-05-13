@@ -10,7 +10,7 @@
   width: 0px;
   background-color: $yellow;
   opacity: 0;
-  transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 450ms cubic-bezier(0.19, 1, 0.22, 1);
 
   &.expanded {
     width: 100%;

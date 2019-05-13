@@ -13,17 +13,12 @@ import ScrollToTop from './components/scrollToTop';
 import './App.scss';
 
 class App extends Component {
-  componentDidMount = () => {
-    // Initialize Firebase
-    console.log(process);
-  };
   render() {
     return (
       <Router>
         <div className="app">
           <ScrollToTop />
           <Nav />
-          Nofn
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/names" exact component={Names} />

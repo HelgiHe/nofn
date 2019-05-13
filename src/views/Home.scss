@@ -1,0 +1,13 @@
+.homeContainer {
+  padding: 20px;
+
+  & &__header {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  & &__content {
+    max-width: 800px;
+  }
+}
